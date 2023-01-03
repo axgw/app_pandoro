@@ -1,6 +1,7 @@
 import 'package:app_pandoro/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:app_pandoro/big_text.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class _MainPageState extends State<MainPage> {
                 children: [
                   Column(
                     children: [
-                      Text("Country"),
+                      Big,
                       Text("City")
                     ],
                   ),
