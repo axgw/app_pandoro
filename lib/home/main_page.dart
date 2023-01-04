@@ -1,7 +1,9 @@
+import 'package:app_pandoro/home/food_page_body.dart';
 import 'package:app_pandoro/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app_pandoro/widgets/big_text.dart';
+import 'package:app_pandoro/widgets/small_text.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -17,7 +19,6 @@ class _MainPageState extends State<MainPage> {
       body: Column(
         children: [
           Container(
-
             child: Container(
               margin: EdgeInsets.only(top: 45, bottom: 15),
               padding: EdgeInsets.only(left: 20, right: 20),
@@ -26,8 +27,13 @@ class _MainPageState extends State<MainPage> {
                 children: [
                   Column(
                     children: [
-                      BigText(text: "Spain", color: AppColors.mainColor),
-                      BigText(text: "Alicante", color: AppColors.textColor, size: 10)
+                      BigText(text: "España", color: AppColors.mainColor),
+                      Row(
+                        children: [
+                          SmallText(text: "Alicante", color: Colors.black54, size: 10),
+                          const Icon(Icons.arrow_drop_down_rounded)
+                        ],
+                      )
                     ],
                   ),
                   Center(
@@ -45,7 +51,8 @@ class _MainPageState extends State<MainPage> {
                 ],
               ),
             )
-          ) // no sé si aquí va una coma o no
+          ),
+          FoodPageBody(),
         ],
       )
     ); //
