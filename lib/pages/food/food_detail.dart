@@ -1,6 +1,7 @@
 import 'package:app_pandoro/utils/dimensions.dart';
 import 'package:app_pandoro/widgets/app_column.dart';
 import 'package:app_pandoro/widgets/app_icon.dart';
+import 'package:app_pandoro/widgets/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,7 @@ class FoodDetail extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
+          // background image
           Positioned(
             left: 0,
             right: 0,
@@ -34,6 +36,7 @@ class FoodDetail extends StatelessWidget {
               ),
       ),
           ),
+          // icon widgets
           Positioned(
             top: Dimensions.height45,
             left: Dimensions.width20,
@@ -46,6 +49,7 @@ class FoodDetail extends StatelessWidget {
               ],
             ),
           ),
+          // food description
           Positioned(
             left: 0,
             right: 0,
@@ -66,12 +70,15 @@ class FoodDetail extends StatelessWidget {
                   AppColumn(text: "Tarta de Zanahoria Vegana"),
                   SizedBox(height: Dimensions.height20),
                   BigText(text: "Descripción"),
+                  SizedBox(height: Dimensions.height20),
+                  Expanded(child: SingleChildScrollView(child: ExpandableText(text: "Esta riquísima tarta de zanahoria vegana está hecha con ingredientes saludables, naturales y no lleva aceite, ni grasas procesadas. Dulce y densa, es perfecta para servir como postre o tarta de cumpleaños.")))
                 ],
               ),
             ),
           ),
         ],
       ),
+
       bottomNavigationBar: Container(
         height: Dimensions.bottomHeightBar,
         padding: EdgeInsets.only(top: Dimensions.height15*2, bottom: Dimensions.height15*2, left: Dimensions.width20, right: Dimensions.width20),
@@ -85,6 +92,7 @@ class FoodDetail extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            // increase/decrease items container
             Container(
               padding: EdgeInsets.only(top: Dimensions.height20, bottom: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20),
               decoration: BoxDecoration(
@@ -101,6 +109,7 @@ class FoodDetail extends StatelessWidget {
                 ],
               ),
             ),
+            // add product to cart container
             Container(
               padding: EdgeInsets.only(top: Dimensions.height20, bottom: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20),
               child: BigText(text: "12€ | Añadir al carrito", color: Colors.white),
