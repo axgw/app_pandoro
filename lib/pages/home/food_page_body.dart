@@ -41,7 +41,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     return Column(
       children: [
         // slider section
-        Container(
+        SizedBox(
           height: 320,
           child: PageView.builder(
               controller: pageController,
@@ -51,7 +51,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               }),
         ),
         // dots under slider
-        new DotsIndicator(
+        DotsIndicator(
           dotsCount: 5,
           position: _currPageValue,
           decorator: DotsDecorator(
@@ -84,7 +84,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         ),
         // list of food and images
         ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: 10,
               itemBuilder: (context, index){
@@ -99,7 +99,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(Dimensions.radius20),
                             color: Colors.white38,
-                            image: DecorationImage(
+                            image: const DecorationImage(
                                 fit: BoxFit.cover,
                                 image: AssetImage(
                                     "assets/images/vegan_cheesecake.jpg"
@@ -130,7 +130,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                                 SizedBox(height: Dimensions.height10),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
+                                  children: const [
                                     IconAndTextWidget(icon: Icons.circle_sharp, text: "Normal", iconColor: AppColors.iconColor1),
                                     IconAndTextWidget(icon: Icons.location_on, text: "1.7km", iconColor: AppColors.mainColor),
                                     IconAndTextWidget(icon: Icons.access_time_rounded, text: "32min", iconColor: AppColors.iconColor2),
@@ -149,7 +149,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     );
   }
   Widget _buildPageItem(int index){
-    Matrix4 matrix = new Matrix4.identity();
+    Matrix4 matrix = Matrix4.identity();
     if(index == _currPageValue.floor()) {
       var currScale = 1 - (_currPageValue - index)*(1 - _scaleFactor);
       var currTrans = _height * (1 - currScale) / 2;
@@ -179,7 +179,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius30),
                 color: index.isEven?Color(0xFFffd379):Color(0xFF9294cc),
-                image: DecorationImage(
+                image: const DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage(
                         "assets/images/vegan_carrot_cake.jpg"
@@ -209,7 +209,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               ),
               child: Container(
                 padding: EdgeInsets.only(top: Dimensions.height15, left: 15, right: 15),
-                child: AppColumn(text: "Tarta de Zanahoria Vegana"),
+                child: const AppColumn(text: "Tarta de Zanahoria Vegana"),
               ),
             ),
           )
