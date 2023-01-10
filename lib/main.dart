@@ -1,11 +1,12 @@
 import 'package:app_pandoro/controllers/popular_product_controller.dart';
-import 'package:app_pandoro/pages/food/food_detail.dart';
-import 'package:app_pandoro/pages/food/recommended_food_detail.dart';
 import 'package:app_pandoro/pages/home/main_page.dart';
+import 'package:app_pandoro/routes/route_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:app_pandoro/helper/dependencies.dart' as dep;
+
+import 'controllers/recommended_product_controller.dart';
 
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -23,14 +24,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
       Get.find<PopularProductController>().getPopularProductList();
+      Get.find<RecommendedProductController>().getRecommendedProductList();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
-      ),
-      home: const FoodDetail() //const MainPage(),//const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MainPage(),
+      initialRoute: RouteHelper.initial,
+      getPages: RouteHelper.routes,
+      //getPages: RouteHelper.routes[].page,
     );
   }
 }

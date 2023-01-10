@@ -1,20 +1,30 @@
+import 'package:app_pandoro/controllers/popular_product_controller.dart';
+import 'package:app_pandoro/pages/home/food_page_body.dart';
 import 'package:app_pandoro/utils/dimensions.dart';
 import 'package:app_pandoro/widgets/app_column.dart';
 import 'package:app_pandoro/widgets/app_icon.dart';
 import 'package:app_pandoro/widgets/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
+import '../../routes/route_helper.dart';
+import '../../utils/app_constants.dart';
 import '../../utils/colors.dart';
 import '../../widgets/big_text.dart';
 import '../../widgets/icon_and_text_widget.dart';
 import '../../widgets/small_text.dart';
 
 class FoodDetail extends StatelessWidget {
-  const FoodDetail({Key? key}) : super(key: key);
+  int pageId;
+  FoodDetail({Key? key, required this.pageId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var product = Get.find<PopularProductController>().popularProductList[pageId];
+    //print("page id is "+pageId.toString());
+    //print("product name " +product.name.toString());
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -29,8 +39,8 @@ class FoodDetail extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(
-                  "assets/images/vegan_carrot_cake.jpg"
+                  image: NetworkImage(
+                    AppConstants.BASE_URL+AppConstants.UPLOAD_URL+product.img!
                   )
                 )
               ),
@@ -44,7 +54,11 @@ class FoodDetail extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                AppIcon(icon: Icons.arrow_back_rounded),
+                GestureDetector(
+                    onTap:(){
+                      Get.toNamed(RouteHelper.initial);
+                    },
+                    child: AppIcon(icon: Icons.arrow_back_rounded)),
                 AppIcon(icon: Icons.shopping_cart_outlined),
               ],
             ),
@@ -67,11 +81,11 @@ class FoodDetail extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AppColumn(text: "Tarta de Zanahoria Vegana"),
+                  AppColumn(text: product.name!),
                   SizedBox(height: Dimensions.height20),
                   BigText(text: "Descripción"),
                   SizedBox(height: Dimensions.height20),
-                  Expanded(child: SingleChildScrollView(child: ExpandableText(text: "Esta riquísima tarta de zanahoria vegana está hecha con ingredientes saludables, naturales y no lleva aceite, ni grasas procesadas. Dulce y densa, es perfecta para servir como postre o tarta de cumpleaños.")))
+                  Expanded(child: SingleChildScrollView(child: ExpandableText(text: product.description!))),
                 ],
               ),
             ),
@@ -112,11 +126,11 @@ class FoodDetail extends StatelessWidget {
             // add product to cart container
             Container(
               padding: EdgeInsets.only(top: Dimensions.height20, bottom: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20),
-              child: BigText(text: "12€ | Añadir al carrito", color: Colors.white),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius20),
                 color: AppColors.mainColor
               ),
+              child: BigText(text: "${product.price!} € | Añadir al carrito", color: Colors.white),
             )
           ],
         ),

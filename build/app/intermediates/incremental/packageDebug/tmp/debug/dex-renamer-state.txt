@@ -1,4 +1,4 @@
-#Sat Jan 07 15:56:35 CET 2023
+#Tue Jan 10 20:40:41 CET 2023
 base.0=D\:\\repos\\app_pandoro\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
