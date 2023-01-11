@@ -1,4 +1,4 @@
-import 'package:app_pandoro/pages/food/food_detail.dart';
+import 'package:app_pandoro/pages/food/popular_food_detail.dart';
 import 'package:get/get.dart';
 
 import '../pages/food/recommended_food_detail.dart';
@@ -22,7 +22,7 @@ class RouteHelper {
   ),
     GetPage(name: foodDetail, page: () {
       var pageId = Get.parameters['pageId'];
-      return FoodDetail(pageId:int.parse(pageId!));
+      return PopularFoodDetail(pageId:int.parse(pageId!));
     },
       transition: Transition.fadeIn,
     ),

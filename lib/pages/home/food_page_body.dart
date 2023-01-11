@@ -1,7 +1,7 @@
 import 'package:app_pandoro/controllers/popular_product_controller.dart';
 import 'package:app_pandoro/controllers/recommended_product_controller.dart';
 import 'package:app_pandoro/models/products_model.dart';
-import 'package:app_pandoro/pages/food/food_detail.dart';
+import 'package:app_pandoro/pages/food/popular_food_detail.dart';
 import 'package:app_pandoro/routes/route_helper.dart';
 import 'package:app_pandoro/utils/dimensions.dart';
 import 'package:app_pandoro/widgets/big_text.dart';
