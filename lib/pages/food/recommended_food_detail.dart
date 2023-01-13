@@ -17,7 +17,8 @@ import '../cart/cart_page.dart';
 
 class RecommendedFoodDetail extends StatelessWidget {
   final int pageId;
-  const RecommendedFoodDetail({Key? key, required this.pageId}) : super(key: key);
+  final String page;
+  const RecommendedFoodDetail({Key? key, required this.pageId, required this.page}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -32,6 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   dots_indicator: ^2.1.0
+  persistent_bottom_nav_bar: ^5.0.2
   get:
 
 

@@ -121,6 +121,13 @@
             </list>
           </value>
         </entry>
+        <entry key="persistent_bottom_nav_bar">
+          <value>
+            <list>
+              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/persistent_bottom_nav_bar-5.0.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="sky_engine">
           <value>
             <list>
@@ -195,6 +202,7 @@
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2/lib" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/persistent_bottom_nav_bar-5.0.2/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0/lib" />

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../pages/cart/cart_page.dart';
 import '../pages/food/recommended_food_detail.dart';
-import '../pages/home/main_page.dart';
+import '../pages/home/home_page.dart';
 
 class RouteHelper {
   static const String initial = "/";
@@ -13,30 +13,32 @@ class RouteHelper {
 
 
   static String getInitial() => initial;
-  static String getFoodDetail(int pageId) => '$foodDetail?pageId=$pageId';
-  static String getRecommendedFoodDetail(int pageId) => '$recommendedFoodDetail?pageId=$pageId';
+  static String getFoodDetail(int pageId, String page) => '$foodDetail?pageId=$pageId&page=$page';
+  static String getRecommendedFoodDetail(int pageId, String page) => '$recommendedFoodDetail?pageId=$pageId&page=$page';
   static String getCartPage() => '$cartPage';
 
   static List<GetPage> routes = [
     GetPage(name: initial, page: () {
-    return const MainPage();
+    return const HomePage();
   },
     transition: Transition.fadeIn,
   ),
     GetPage(name: foodDetail, page: () {
       var pageId = Get.parameters['pageId'];
-      return PopularFoodDetail(pageId:int.parse(pageId!));
+      var page = Get.parameters["page"];
+      return PopularFoodDetail(pageId:int.parse(pageId!), page:page!);
     },
       transition: Transition.fadeIn,
     ),
     GetPage(name: recommendedFoodDetail, page: () {
       var pageId = Get.parameters['pageId'];
-      return RecommendedFoodDetail(pageId:int.parse(pageId!));
+      var page = Get.parameters["page"];
+      return RecommendedFoodDetail(pageId:int.parse(pageId!), page:page!);
     },
       transition: Transition.fadeIn,
     ),
     GetPage(name: cartPage, page: () {
-      return CartPage();
+      return const CartPage();
     },
       transition: Transition.fadeIn,
     ),

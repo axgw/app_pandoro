@@ -6,10 +6,10 @@ class Product {
   List<ProductModel> get products => _products;
 
   Product({required totalSize, required typeId, required offset, required products}) {
-    this._totalSize = totalSize;
-    this._typeId = typeId;
-    this._offset = offset;
-    this._products = products;
+    _totalSize = totalSize;
+    _typeId = typeId;
+    _offset = offset;
+    _products = products;
   }
 
   Product.fromJson(Map<String, dynamic> json) {
@@ -19,18 +19,18 @@ class Product {
     if (json['products'] != null) {
       _products = <ProductModel>[];
       json['products'].forEach((v) {
-        _products.add(new ProductModel.fromJson(v));
+        _products.add(ProductModel.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['total_size'] = this._totalSize;
-    data['type_id'] = this._typeId;
-    data['offset'] = this._offset;
-    if (this._products != null) {
-      data['products'] = this._products!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['total_size'] = _totalSize;
+    data['type_id'] = _typeId;
+    data['offset'] = _offset;
+    if (_products != null) {
+      data['products'] = _products!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -75,16 +75,16 @@ class ProductModel {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['description'] = this.description;
-    data['price'] = this.price;
-    data['stars'] = this.stars;
-    data['img'] = this.img;
-    data['location'] = this.location;
-    data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
-    data['type_id'] = this.typeId;
+    data['id'] = id;
+    data['name'] = name;
+    data['description'] = description;
+    data['price'] = price;
+    data['stars'] = stars;
+    data['img'] = img;
+    data['location'] = location;
+    data['created_at'] = createdAt;
+    data['updated_at'] = updatedAt;
+    data['type_id'] = typeId;
     return data;
   }
 }
