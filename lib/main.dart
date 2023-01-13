@@ -1,4 +1,5 @@
 import 'package:app_pandoro/controllers/popular_product_controller.dart';
+import 'package:app_pandoro/pages/splash/splash_screen.dart';
 import 'package:app_pandoro/routes/route_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,15 +23,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-      Get.find<PopularProductController>().getPopularProductList();
-      Get.find<RecommendedProductController>().getRecommendedProductList();
+    Get.find<PopularProductController>().getPopularProductList();
+    Get.find<RecommendedProductController>().getRecommendedProductList();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      //home: MainPage(),
-      initialRoute: RouteHelper.getInitial(),
+      //home: const SplashScreen(),
+      initialRoute: RouteHelper.getSplashScreen(),
       getPages: RouteHelper.routes,
-      //getPages: RouteHelper.routes[].page,
     );
   }
 }
