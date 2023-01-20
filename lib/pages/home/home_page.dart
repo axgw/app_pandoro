@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
     return [
       const MainPage(),
       Container(child: Center(child: Text("Next page"))),
-      Container(child: Center(child: Text("Next next page"))),
+      CartHistory(),
       Container(child: Center(child: Text("Next next next page"))),
     ];
   }

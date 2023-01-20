@@ -13,8 +13,10 @@ class CartRepo {
   void addToCartList(List<CartModel> cartList) {
     //sharedPreferences.remove(AppConstants.CART_LIST);
     //sharedPreferences.remove(AppConstants.CART_HISTORY_LIST);
+
     var time = DateTime.now().toString();
     cart = [];
+
     // convert objects to string because sharedPreferences only accepts string
     cartList.forEach((element) {
       element.time = time;
@@ -49,14 +51,18 @@ class CartRepo {
   }
 
   void addToCartHistoryList() {
+    if(sharedPreferences.containsKey(AppConstants.CART_HISTORY_LIST)) {
+      cartHistory = sharedPreferences.getStringList(AppConstants.CART_HISTORY_LIST)!;
+    }
     for (int i = 0; i < cart.length; i++) {
       cartHistory.add(cart[i]);
     }
-    removeCart();
     sharedPreferences.setStringList(AppConstants.CART_HISTORY_LIST, cartHistory);
+    removeCart();
   }
 
   void removeCart() {
+    cart = [];
     sharedPreferences.remove(AppConstants.CART_LIST);
   }
 }
