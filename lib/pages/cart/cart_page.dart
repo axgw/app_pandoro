@@ -52,7 +52,8 @@ class CartPage extends StatelessWidget {
               )
           ),
           GetBuilder<CartController>(builder: (_cartController){
-            return _cartController.getItems.isNotEmpty?Positioned(
+            if (_cartController.getItems.isNotEmpty) {
+              return Positioned(
                 top: Dimensions.height20*5,
                 left: Dimensions.width20,
                 right: Dimensions.width20,
@@ -153,8 +154,11 @@ class CartPage extends StatelessWidget {
                                   ));
                             });
                       }),
-                    )
-                )):const NoDataPage(text: "Your cart is empty");
+                    ),
+                ));
+            } else {
+              return const NoDataPage(text: "Tu cesta está vacía");
+            }
           })
         ],
       ),

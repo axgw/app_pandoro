@@ -108,6 +108,7 @@ class CartHistory extends StatelessWidget {
                                       return index<=2?Container(
                                           height: Dimensions.height20*4,
                                           width: Dimensions.height20*4,
+                                          margin: EdgeInsets.only(right: Dimensions.width10/2),
                                           decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(Dimensions.radius15/2),
                                               image: DecorationImage(
@@ -133,13 +134,15 @@ class CartHistory extends StatelessWidget {
                                             Map<int, CartModel> orderMore = {};
                                             for(int j=0; j < getCartHistoryList.length; j++) {
                                               if(getCartHistoryList[j].time==orderTime[i]) {
-                                                orderMore.putIfAbsent(getCartHistoryList[j].id!, () => CartModel.fromJson(jsonDecode(jsonEncode(getCartHistoryList[j]))));
+                                                orderMore.putIfAbsent(getCartHistoryList[j].id!, () =>
+                                                    CartModel.fromJson(jsonDecode(jsonEncode(getCartHistoryList[j])))
+                                                );
                                               }
                                             }
                                             Get.find<CartController>().setItems = orderMore;
                                             Get.find<CartController>().addToCartList();
 
-                                            //Get.toNamed(RouteHelper.getCartPage());
+                                            Get.toNamed(RouteHelper.getCartPage());
                                           },
                                           child: Container(
                                             padding: EdgeInsets.symmetric(horizontal: Dimensions.width10, vertical: Dimensions.height10/2),
