@@ -124,8 +124,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                               color: Colors.white38,
                               image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: AssetImage(
-                                    "assets/images/vegan_cheesecake.jpg"
+                                  image: NetworkImage(
+                                      AppConstants.BASE_URL+AppConstants.UPLOAD_URL+recommendedProduct.recommendedProductList[index].img!
                                   )
                               )
                           ),
@@ -210,8 +210,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   color: index.isEven?Color(0xFFffd379):Color(0xFF9294cc),
                   image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage(
-                        "assets/images/vegan_carrot_cake.jpg"
+                      image: NetworkImage(
+                        AppConstants.BASE_URL+AppConstants.UPLOAD_URL+popularProduct.img!
                       )
                   )
               ),

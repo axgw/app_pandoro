@@ -169,7 +169,7 @@ class CartHistory extends StatelessWidget {
               height: MediaQuery.of(context).size.height/1.5,
                 child: const Center(
                   child: NoDataPage(text: "No has comprado nada todavía",
-                    imgPath: "assets/images/emptybox.png",),
+                    imgPath: "assets/images/empty_cart.png",),
                 ));
           })
         ],

@@ -116,7 +116,7 @@ class CartPage extends StatelessWidget {
                                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                           children: [
                                             BigText(text: cartController.getItems[index].name!, color: Colors.black54),
-                                            SmallText(text: "Spicy"),
+                                            SmallText(text: "Dulce"),
                                             Row(
                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [

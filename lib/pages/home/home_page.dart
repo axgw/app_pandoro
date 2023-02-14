@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 import '../cart/cart_history.dart';
+import '../cart/cart_page.dart';
 import 'main_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,8 +19,9 @@ class _HomePageState extends State<HomePage> {
   int  _selectedIndex = 0;
   List pages = [
     const MainPage(),
-    Container(child: Center(child: Text("Next page"))),
     CartHistory(),
+    CartPage(),
+    //Container(child: Center(child: Text("Next page"))),
     Container(child: Center(child: Text("Next next next page"))),
   ];
 
@@ -38,9 +40,10 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _buildScreens() {
     return [
       const MainPage(),
-      Container(child: Center(child: Text("Next page"))),
       CartHistory(),
-      Container(child: Center(child: Text("Next next next page"))),
+      CartPage(),
+      //Container(child: Center(child: Text("Next page"))),
+      Container(child: Center(child: Text("Perfil de Usuario"))),
     ];
   }
 

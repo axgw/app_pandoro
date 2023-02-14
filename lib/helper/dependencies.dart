@@ -13,8 +13,8 @@ Future<void> init()async {
   final sharedPreferences = await SharedPreferences.getInstance();
   Get.lazyPut(() => sharedPreferences);
 
-  // API client
-  Get.lazyPut(() => ApiClient(appBaseUrl: "http://mvs.bslmeiyu.com"));
+  // API client http://192.168.0.30:8000
+  Get.lazyPut(() => ApiClient(appBaseUrl: "http://192.168.0.30:81"));
 
   // repos
   Get.lazyPut(() => PopularProductRepo(apiClient: Get.find()));
