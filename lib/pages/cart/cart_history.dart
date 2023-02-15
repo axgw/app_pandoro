@@ -106,9 +106,9 @@ class CartHistory extends StatelessWidget {
                                         listCounter++;
                                       }
                                       return index<=2?Container(
-                                          height: Dimensions.height20*4,
-                                          width: Dimensions.height20*4,
-                                          margin: EdgeInsets.only(right: Dimensions.width10/2),
+                                          height: 70,
+                                          width: 70,
+                                          margin: EdgeInsets.only(right: Dimensions.width15/2),
                                           decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(Dimensions.radius15/2),
                                               image: DecorationImage(
@@ -150,7 +150,7 @@ class CartHistory extends StatelessWidget {
                                               borderRadius: BorderRadius.circular(Dimensions.radius15/3),
                                               border: Border.all(width: 1, color: AppColors.mainColor),
                                             ),
-                                            child: SmallText(text: "one more", color: AppColors.mainColor),
+                                            child: SmallText(text: "pedir de nuevo", color: AppColors.mainColor),
                                           ),
                                         )
                                       ],

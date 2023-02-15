@@ -1,7 +1,6 @@
 import 'package:app_pandoro/controllers/popular_product_controller.dart';
 import 'package:app_pandoro/widgets/app_icon.dart';
 import 'package:app_pandoro/widgets/big_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -32,6 +31,7 @@ class RecommendedFoodDetail extends StatelessWidget {
           SliverAppBar(
             automaticallyImplyLeading: false,
             toolbarHeight: 85,
+            backgroundColor: AppColors.mainColor,
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

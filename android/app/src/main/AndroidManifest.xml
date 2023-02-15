@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pandoro.app_pandoro">
    <application
-        android:label="app_pandoro"
+        android:label="Pand'oro"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
