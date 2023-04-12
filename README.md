@@ -1,2 +1,2 @@
 # app_pandoro
-Unfinished prototype for my end of degree project.
+Unfinished prototype flutter app for my end of degree project.
