@@ -1,4 +1,4 @@
-# app_pandoro
+# Pandoro Bakery App
 Unfinished prototype flutter app for my end of degree project.
 
 
